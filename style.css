@@ -1,0 +1,111 @@
+/* Content */
+    /* Global & Body */
+    /* Section 1 */
+/* ------- */
+
+/* Global & Body */
+
+:root {
+    --border-width: 0.32rem;
+    --body-border-color: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: calc(100vmax / 12) 0;
+    gap: calc(100vmax / 12);
+    position: relative;
+    min-height: 100vh;
+    background-color: #888;
+}
+
+body::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: calc(11 * 100vmax / 12);
+    height: calc(100% - 100vmax / 12);
+    background-color: #eee;
+    border: calc(3 * var(--border-width)) double var(--body-border-color);
+    border-radius: 1.5em;
+}
+
+@media (max-width: 767px) {
+    body::before {
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+}
+
+section {
+    border-top: var(--border-width) solid var(--body-border-color);
+    border-bottom: var(--border-width) solid var(--body-border-color);
+}
+
+/* Section 1 */
+
+#section-1 {
+    --section1-color: #141414;
+    font-size: 2.5vw;
+    line-height: 2;
+    padding: 2em;
+    padding-left: 23.5vw;
+    background-color: #fcf9ee;
+    color: var(--section1-color);
+}
+
+@media (max-width: 991px) {
+    #section-1 {
+        font-size: 2.5em;
+        padding-left: 2em;
+    }
+}
+
+#section-1 ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    list-style: none;
+}
+
+#section-1 a {
+    display: inline-block;
+    white-space: nowrap;
+    border: var(--section1-color) solid 3px;
+    background-color: #e7d6c4;
+    padding: 0 0.5em;
+    color: var(--section1-color);
+}
+
+@media (max-width: 575px) {
+    #section-1 a {
+        white-space: normal;
+    }
+}
+
+#section-1 a:hover {
+    background-color: #ddc92a;
+    text-decoration: none;
+}
