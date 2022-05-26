@@ -1,0 +1,174 @@
+:root {
+    --background-violet: #af67e9;
+    --background-blue: #6565e7;
+    --accordion-background: #fff;
+    --text: #1d1e35;
+    --text-hover: #f47c57;
+    --text-header: #4a4b5e;
+    --text-panel: #787887;
+    --divider: #e7e7e9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Kumbh Sans', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 14.8rem;
+    padding-bottom: 8.5rem;
+    background: linear-gradient(var(--background-violet), var(--background-blue));
+}
+
+h1 {
+    font-size: 2.4rem;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 0.9rem;
+}
+
+p {
+    font-size: 0.9rem;
+    line-height: 2;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 25rem;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 87.2vw;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2.4rem 4.8rem;
+    background-color: var(--accordion-background);
+    border-radius: 2.4rem;
+    box-shadow: 0 5rem 5rem -5rem var(--text), 2rem 2rem 4rem -3rem var(--background-blue), -2rem 2rem 4rem -3rem var(--background-blue);
+}
+
+.illustration {
+    align-self: center;
+    transform: translateY(-12.7rem);
+    width: 28rem;
+    height: 24.4rem;
+    background: url('../img/illustration-woman-online-mobile.svg') top no-repeat, url('../img/bg-pattern-mobile.svg') bottom no-repeat;
+    background-size: contain, contain;
+}
+
+.wrapper {
+    margin-top: -12.7rem;
+    padding: 3.4rem 0 0 0;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--divider);
+}
+
+.accordion {
+    background-color: var(--accordion-background);
+    color: var(--text-header);
+    cursor: pointer;
+    padding: 1.6rem 0;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.accordion::after {
+    content: url("../img/icon-arrow-down.svg");
+    float: right;
+}
+
+.active::after {
+    transform: rotate(180deg);
+}
+
+.accordion:hover {
+    color: var(--text-hover);
+}
+
+.active {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.panel {
+    padding-bottom: 1.9rem;
+    color: var(--text-panel);
+    display: none;
+    overflow: hidden;
+}
+
+.attribution {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text);
+    z-index: -1;
+}
+
+.attribution a {
+    color: var(--text);
+    z-index: 0;
+}
+
+.attribution a:hover {
+    color: var(--text-hover);
+}
+
+@media (min-width: 768px) {
+
+    h1 {
+        text-align: left;
+        margin-bottom: 2.4rem;
+    }
+    
+    .container {
+        padding: 0;
+        flex-direction: row;
+    }
+    
+    .wrapper {
+        width: 50%;
+        margin-top: 0;
+        padding: 5rem 7.1rem 6.2rem 0;
+    }
+
+    .illustration {
+        align-self: stretch;
+        transform: translateY(0);
+        width: 50%;
+        height: auto;
+        margin-right: 6.3rem;
+        background: url('../img/illustration-box-desktop.svg') right 32rem top 63% no-repeat, url('../img/illustration-woman-online-desktop.svg') right center no-repeat,  url('../img/bg-pattern-desktop.svg') right center no-repeat;
+        background-size: auto auto, 47.2rem auto, 47.2rem auto;
+    }
+
+    .illustration::after {
+        display: none;
+    }
+
+    .accordion::after {
+        margin-right: 1.5rem;
+    }
+}
