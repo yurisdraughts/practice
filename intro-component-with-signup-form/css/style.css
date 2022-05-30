@@ -1,0 +1,203 @@
+/*
+Content
+    Global
+    Typography
+    Main
+    Form
+    Footer
+    Active state
+    Media queries
+*/
+
+/* Global */
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    min-height: 100vh;
+    padding: 100px calc(100vw * 24 / 375) 0;
+    background-color: var(--red);
+    background-image: url('../img/bg-intro-mobile.png');
+}
+
+/* Typography */
+main .wrapper,
+main h2,
+form input[type="submit"],
+.attribution,
+.attribution a {
+    color: white;
+}
+
+main h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+main h2 {
+    font-weight: 400;
+}
+
+main p {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+h2 span {
+    font-weight: 600;
+}
+
+form a {
+    font-weight: 700;
+    color: var(--red);
+    text-decoration: none;
+}
+
+form input {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+form input:not([type="submit"]) {
+    color: var(--dark-blue);
+}
+
+form input[type="submit"] {
+    letter-spacing: 1px;
+}
+
+form p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--grayish-blue);
+}
+
+.attribution {
+    font-size: 1.1rem;
+}
+
+/* Main */
+main h1 {
+    margin-bottom: 2.8rem;
+}
+
+main h2 {
+    padding: 2.5rem 8rem;
+    background-color: var(--blue);
+    border-radius: 0.8rem;
+    margin-bottom: 2.4rem;
+}
+
+main h2,
+main form {
+    box-shadow: 0 0.8rem rgb(128, 128, 128, 0.5);
+}
+
+.wrapper:first-child p {
+    margin-bottom: 7rem;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 2.4rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+label, input, form p {
+    width: 100%;
+}
+
+input {
+    padding: 1.9rem;
+    border-radius: 0.5rem;
+}
+
+input:not([type="submit"]) {
+    border: 1px solid var(--grayish-blue);
+}
+
+input[type="submit"] {
+    background-color: var(--green);
+    border: none;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+input.warning {
+    border: 2px solid var(--red);
+}
+
+input.warning::placeholder {
+    content: url('../img/icon-error.svg');
+    float: right;
+}
+
+label {
+    font-style: italic;
+    text-align: right;
+    color: var(--red);
+}
+
+form p {
+    width: 82.5%;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+    body {
+        gap: 0;
+        padding: 120px calc(100vw * 165 / 1440) 0;
+        background-image: url('../img/bg-intro-desktop.png');
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 7.5rem;
+    }
+
+    .wrapper:first-child {
+        text-align: left;
+    }
+
+    form input {
+        padding-left: 3.1rem;
+    }
+}
