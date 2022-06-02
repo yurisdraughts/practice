@@ -102,7 +102,7 @@ function closeMobileMenu() {
     mobileMenuOpen = false;
 }
 
-function addAMobileDropdown() {
+function addAMobileDropdown(i) {
     arrowDown(arrowIcons[i]);
     hideAllDropdown(dropDownNavList[i]);
 
@@ -112,8 +112,8 @@ function addAMobileDropdown() {
 
 function addMobileDropdowns() {
     dropDownBtn.forEach((btn, i) => {
-        btn.addEventListener('click', () => addAMobileDropdown());
-        btn.addEventListener('touchstart', () => addAMobileDropdown());
+        btn.addEventListener('click', () => addAMobileDropdown(i));
+        btn.addEventListener('touchstart', () => addAMobileDropdown(i));
     });
 }
 
