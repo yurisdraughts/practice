@@ -79,6 +79,9 @@ function openMobileMenu() {
     window.addEventListener('click', (event) => {
         if (event.target === gray) closeMobileMenu();
     });
+    window.addEventListener('touchstart', (event) => {
+        if (event.target === gray) closeMobileMenu();
+    });
 
     closeBtn.classList.remove('hidden');
 
@@ -99,15 +102,18 @@ function closeMobileMenu() {
     mobileMenuOpen = false;
 }
 
+function addAMobileDropdown(i) {
+    arrowDown(arrowIcons[i]);
+    hideAllDropdown(dropDownNavList[i]);
+
+    dropDownNavList[i].classList.toggle('hidden');
+    arrowIcons[i].classList.toggle('js-arrow-up');
+}
+
 function addMobileDropdowns() {
     dropDownBtn.forEach((btn, i) => {
-        btn.addEventListener('click', () => {
-            arrowDown(arrowIcons[i]);
-            hideAllDropdown(dropDownNavList[i]);
-
-            dropDownNavList[i].classList.toggle('hidden');
-            arrowIcons[i].classList.toggle('js-arrow-up')
-        });
+        btn.addEventListener('click', () => addAMobileDropdown(i));
+        btn.addEventListener('touchstart', () => addAMobileDropdown(i));
     });
 }
 
@@ -121,5 +127,7 @@ window.matchMedia(mediaQuery).addEventListener('change', () => {
 
 /* Mobile menu */
 menuBtn.addEventListener('click', () => openMobileMenu());
+menuBtn.addEventListener('touchstart', () => openMobileMenu());
 
 closeBtn.addEventListener('click', () => closeMobileMenu());
+closeBtn.addEventListener('touchstart', () => closeMobileMenu());
