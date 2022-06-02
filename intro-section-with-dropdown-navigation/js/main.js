@@ -99,6 +99,7 @@ function closeMobileMenu() {
     mobileMenuOpen = false;
 }
 
+
 function addMobileDropdowns() {
     dropDownBtn.forEach((btn, i) => {
         btn.addEventListener('click', () => {
