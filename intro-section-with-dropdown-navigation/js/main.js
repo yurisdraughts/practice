@@ -79,9 +79,6 @@ function openMobileMenu() {
     window.addEventListener('click', (event) => {
         if (event.target === gray) closeMobileMenu();
     });
-    window.addEventListener('touchstart', (event) => {
-        if (event.target === gray) closeMobileMenu();
-    });
 
     closeBtn.classList.remove('hidden');
 
@@ -113,7 +110,6 @@ function addAMobileDropdown(i) {
 function addMobileDropdowns() {
     dropDownBtn.forEach((btn, i) => {
         btn.addEventListener('click', () => addAMobileDropdown(i));
-        btn.addEventListener('touchstart', () => addAMobileDropdown(i));
     });
 }
 
@@ -127,7 +123,5 @@ window.matchMedia(mediaQuery).addEventListener('change', () => {
 
 /* Mobile menu */
 menuBtn.addEventListener('click', () => openMobileMenu());
-menuBtn.addEventListener('touchstart', () => openMobileMenu());
 
 closeBtn.addEventListener('click', () => closeMobileMenu());
-closeBtn.addEventListener('touchstart', () => closeMobileMenu());
