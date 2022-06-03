@@ -381,7 +381,7 @@ footer {
 }
 
 .attribution a {
-    text-decoration-line: overline;
+    text-decoration-line: overline underline;
 }
 
 /* Media query */

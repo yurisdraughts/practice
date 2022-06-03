@@ -14,7 +14,8 @@ const arrowIcons = document.querySelectorAll('.dropdown-btn i.arrow');
 
 const menuBtn = document.querySelector('.menu-btn');
 const closeBtn = document.querySelector('.close-btn');
-const dropDownBtn = document.querySelectorAll('.dropdown-btn');
+const dropDownBtn = document.querySelectorAll('.dropdown-btn span');
+const dropDownBtn2 = document.querySelectorAll('.dropdown-btn i');
 
 const mediaQuery = '(max-width: 768px)';
 let mobileMenuOpen = false;
@@ -109,6 +110,9 @@ function addAMobileDropdown(i) {
 
 function addMobileDropdowns() {
     dropDownBtn.forEach((btn, i) => {
+        btn.addEventListener('click', () => addAMobileDropdown(i));
+    });
+    dropDownBtn2.forEach((btn, i) => {
         btn.addEventListener('click', () => addAMobileDropdown(i));
     });
 }
