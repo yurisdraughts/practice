@@ -9,13 +9,9 @@ Content
 const nav = document.querySelector('nav');
 
 const navListLong = document.querySelector('.nav-list--long');
-const dropDownNavList = document.querySelectorAll('.dropdown-nav-list');
-const arrowIcons = document.querySelectorAll('.dropdown-btn i.arrow');
 
 const menuBtn = document.querySelector('.menu-btn');
 const closeBtn = document.querySelector('.close-btn');
-const dropDownBtn = document.querySelectorAll('.dropdown-btn span');
-const dropDownBtn2 = document.querySelectorAll('.dropdown-btn i');
 
 const mediaQuery = '(max-width: 768px)';
 let mobileMenuOpen = false;
@@ -33,27 +29,9 @@ const gray = document.createElement('DIV');
     g.backgroundColor = 'rgba(0,0,0,0.7)';
 })();
 
-/* Functions */
-function hideAllDropdown(except) {
-    dropDownNavList.forEach(list => {
-        if (list !== except) {
-            list.classList.add('hidden');
-        }
-    });
-}
-
-function arrowDown(except) {
-    arrowIcons.forEach(i => {
-        if (i !== except) {
-            i.classList.remove('js-arrow-up')
-        }
-    });
-}
-
 function toSmallScreen() {
     menuBtn.classList.remove('hidden');
     navListLong.classList.add('mobile-menu');
-    hideAllDropdown();
 }
 
 function toLargeScreen() {
@@ -61,7 +39,6 @@ function toLargeScreen() {
 
     menuBtn.classList.add('hidden');
     navListLong.classList.remove('mobile-menu');
-    hideAllDropdown();
 }
 
 function adjustScreen() {
@@ -92,29 +69,9 @@ function closeMobileMenu() {
 
     closeBtn.classList.add('hidden');
 
-    hideAllDropdown();
-    arrowDown();
-
     nav.removeChild(gray);
 
     mobileMenuOpen = false;
-}
-
-function addAMobileDropdown(i) {
-    arrowDown(arrowIcons[i]);
-    hideAllDropdown(dropDownNavList[i]);
-
-    dropDownNavList[i].classList.toggle('hidden');
-    arrowIcons[i].classList.toggle('js-arrow-up');
-}
-
-function addMobileDropdowns() {
-    dropDownBtn.forEach((btn, i) => {
-        btn.addEventListener('click', () => addAMobileDropdown(i));
-    });
-    dropDownBtn2.forEach((btn, i) => {
-        btn.addEventListener('click', () => addAMobileDropdown(i));
-    });
 }
 
 /* Adaptive design */
@@ -122,7 +79,6 @@ adjustScreen();
 
 window.matchMedia(mediaQuery).addEventListener('change', () => {
     adjustScreen();
-    addMobileDropdowns();
 });
 
 /* Mobile menu */

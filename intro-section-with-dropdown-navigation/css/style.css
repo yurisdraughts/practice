@@ -70,10 +70,6 @@ a {
     background-image: url('../images/icon-arrow-down.svg');
 }
 
-.js-arrow-up {
-    background-image: url('../images/icon-arrow-up.svg') !important;
-}
-
 .features-icon {
     display: inline-block;
     height: 1.4rem;
@@ -274,14 +270,6 @@ li ul {
 
 .mobile-menu .dropdown {
     padding: 0;
-}
-
-.mobile-menu :hover .hidden {
-    display: none !important;
-}
-
-.mobile-menu .dropdown:hover .arrow {
-    background-image: url('../images/icon-arrow-down.svg');
 }
 
 .mobile-menu .dropdown-nav-list {
