@@ -1,10 +1,10 @@
-/* Content */
-    /* Global & Body */
-    /* Section 1 */
-/* ------- */
+/* Content
+    Global & Body
+    Section 1
+        Corner
+*/
 
 /* Global & Body */
-
 :root {
     --border-width: 0.32rem;
     --body-border-color: #111;
@@ -91,7 +91,7 @@ section {
 }
 
 #section-1 a {
-    display: inline-block;
+    display: block;
     white-space: nowrap;
     border: var(--section1-color) solid 3px;
     background-color: #e7d6c4;
@@ -108,4 +108,51 @@ section {
 #section-1 a:hover {
     background-color: #ddc92a;
     text-decoration: none;
+}
+
+/* Corner */
+#section-1 li {
+    position: relative;
+}
+
+#section-1 li .corner {
+    --size: 2.5vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-1.25vw, -50%); /* -1.25vw = - var(--size) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-width: var(--size);
+    height: var(--size);
+    font-size: .5em;
+    font-weight: 700;
+    font-family: sans-serif;
+    line-height: var(--size);
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: var(--size);
+    border: var(--section1-color) solid 3px;
+}
+
+#section-1 li:hover .corner {
+    padding: 0 1ch;
+}
+
+#section-1 li:not(:hover) .level {
+    display: none;
+}
+
+#section-1 li:hover .number {
+    display: none;
+}
+
+#section-1 li.newbie .corner {
+    background-color: rgb(106, 190, 205);
+}
+
+#section-1 li.junior .corner {
+    background-color: rgb(170, 215, 66);
 }
